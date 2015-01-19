@@ -37,22 +37,61 @@ var binarySearch = function binarySearch(arr, val) {
 
 
 
+
 /*
  * COUNTING TAGS
  */
 var countTags = function countTags(items) {
    // Declare your local variables here. One was done for you.
-   var tagCounts;
+   var tagCounts = {},obj,variableTag;
 
    // Add your code here
-
-
+   items.forEach(function(obj){
+      if(Array.isArray(obj.tags)){
+         obj.tags.forEach(function(variableTag){
+            if(!(variableTag in tagCounts)){
+               tagCounts[variableTag] = 0;
+            }
+            tagCounts[variableTag] = tagCounts[variableTag] + 1;
+         });
+      }
+   });
    return tagCounts;
 };
+
+
+
+
 
 /*
  * EXTRACT HASHTAGS
  */
 var extractHashTags = function extractHashTags(str) {
-
+   var matchedHashTags,matchedElement,finalizedHashTags=[],index=0,duplicate,finalizedElement;
+   matchedHashTags = str.match(/#[a-z.A-Z]+/g);
+   if(matchedHashTags != null){
+      matchedHashTags.forEach(function(matchedElement, index){
+         duplicate = finalizedHashTags.some(function(finalizedElement){
+            return finalizedElement === matchedHashTags[index].slice(1);
+         });
+         if(!duplicate){
+            finalizedHashTags.push(matchedElement.slice(1));
+         }
+         index ++;
+      });
+      return finalizedHashTags;
+   } else {
+      return finalizedHashTags;
+   }     
 };
+
+
+
+
+
+
+
+
+
+
+
