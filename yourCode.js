@@ -17,7 +17,6 @@ var binarySearch = function binarySearch(arr, val) {
    if ((arr[lo] === val) || (arr[hi] === val)) {
       return true;
    }
-
    while (((hi - lo) > 1)) {     // You should change this with a proper condition
       // You will need to add things here
       if(arr[mid] === val){
@@ -84,14 +83,3 @@ var extractHashTags = function extractHashTags(str) {
       return finalizedHashTags;
    }     
 };
-
-
-
-
-
-
-
-
-
-
-
