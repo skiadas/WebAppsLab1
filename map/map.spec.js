@@ -27,4 +27,7 @@ decribe('Your code for Map Structure', function(){
    it('actually defines a function', function(){
       expect(makeMap).to.be.a('function');
    });
+   it('makeMap is empty upon creation', function(){
+      expect(makeMap.isEmpty).to.be.equal(true);
+   });
 });
