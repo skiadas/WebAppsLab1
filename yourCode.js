@@ -3,7 +3,10 @@
  * Name 2: YourNameHere
  */
 // All your code will go here
-var makeStack;
+var makeStack = function() {
+
+
+};
 
 
 // Do NOT change anything below this line.
