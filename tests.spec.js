@@ -11,9 +11,12 @@ try {
 
 describe('Your code for stacks', function() {
    it('defines a variable makeStack', function() {
-   	expect(function() { makeStack; }).to.not.throw(Error);
+      expect(function() { makeStack; }).to.not.throw(Error);
    });
    // Add more "it" sections below
+   it('actually defines a function makeStack', function() {
+    expect(makeStack).to.be.a('function');
+});
 });
 
 console.log("yo")
