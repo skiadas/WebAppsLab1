@@ -12,5 +12,14 @@ describe('Your code for stacks', function() {
    it('defines a variable makeStack', function() {
    	expect(function() { makeStack; }).to.not.throw(Error);
    });
+
+describe('Your makeStack function', function() {
+var stack = makeStack();
+	it('returns an object', function() {
+    	expect(stack).to.be.a('object');
+	});
+
+});
+
    // Add more "it" sections below
 });
