@@ -19,3 +19,21 @@ function randomString(len) {
 // DO NOT CHANGE ANYTHING ABOVE THIS LINE
 
 // Add your tests below
+describe('Your code for maps', function() {
+   it('defines a variable makeMap', function() {
+      expect(function() { makeMap; }).to.not.throw(Error);
+   });
+});
+
+describe('Your makeMap function', function() {
+   var map = makeMap();
+   it('returns an object', function() {
+      expect(map).to.be.a('object');
+   });
+   it('returns an object with methods has, lookup, add, update, remove', function() {
+      ['has', 'lookup', 'add','update','remove'].forEach(function(key) {
+           expect(map[key]).to.be.a('function');
+      });
+   });
+});
+
