@@ -22,9 +22,9 @@ function randomString(len) {
 
 decribe('Your code for Map Structure', function(){
    it('defines a variable makeMap', function(){
-      expect(function() makeMap;}).to.not.throw(Error);
+      expect(function() { makeMap; }).to.not.throw(Error);
    });
    it('actually defines a function', function(){
-      expect(makeMap.to.be.a('function');
+      expect(makeMap).to.be.a('function');
    });
 });
