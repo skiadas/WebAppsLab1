@@ -31,23 +31,17 @@ describe('Your makeStack function', function() {
    });
 });
 
-
-
-/*
-
-
-
-describe('Your makeStack function', function() {
-   var stack = makeStack();
-   it('returns an object', function() {
-    expect(stack).to.be.a('object');
-   });
-   it('returns an object with methods push, pop and isEmpty', function() {
-    ['push', 'pop', 'isEmpty'].forEach(function(key) {
-        expect(stack[key]).to.be.a('function');
+describe('Stack methods:', function() {
+    var stack;
+    beforeEach(function() {
+        // This ensures every test sees a fresh empty stack
+        stack = makeStack();
     });
-   });
-
+    it('isEmpty returns true for a new stack', function() {
+        expect(stack.isEmpty()).to.equal(true);
+    });
+    it('isEmpty returns false if an element is pushed', function() {
+        stack.push(2);
+        expect(stack.isEmpty()).to.equal(false);
+    });
 });
-});
-*/
