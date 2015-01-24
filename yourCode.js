@@ -3,11 +3,17 @@
  * Name 2: Luke Lentz
  */
 // All your code will go here
-var makeStack = function() {
-var stack = {};
+var makeStack = (function() {
+var stack = {
+	push: function push(el){
+	},
+	pop: function pop(){
+	},
+	isEmpty: function isEmpty(){
+	}
+};
 return stack;
-}
-
+})
 
 // Do NOT change anything below this line.
 /*
