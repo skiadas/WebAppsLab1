@@ -4,9 +4,9 @@
  */
 // All your code will go here
 var makeStack = function() {
-
-
-};
+var stack = {};
+return stack;
+}
 
 
 // Do NOT change anything below this line.
