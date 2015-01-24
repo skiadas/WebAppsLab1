@@ -7,8 +7,16 @@ var makeStack = (function() {
 var arr = [];
 var stack = {
 	push: function push(el){
+		arr.push(el);
+		return stack;
 	},
 	pop: function pop(){
+		if (!this.isEmpty()){
+			return arr.pop();
+		}
+		else {
+			throw new Error("Cannot pop on empty stack");
+		}
 	},
 	isEmpty: function isEmpty(){
 		return arr.length === 0;	
@@ -16,6 +24,8 @@ var stack = {
 };
 return stack;
 })
+
+
 
 // Do NOT change anything below this line.
 /*
