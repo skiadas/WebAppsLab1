@@ -19,6 +19,13 @@ var stack = makeStack();
     	expect(stack).to.be.a('object');
 	});
 
+	it('returns an object with methods push, pop and isEmpty', function() {
+    ['push', 'pop', 'isEmpty'].forEach(function(key) {
+        expect(stack[key]).to.be.a('function');
+    });
+});
+
+
 });
 
    // Add more "it" sections below
