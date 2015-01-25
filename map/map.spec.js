@@ -39,8 +39,8 @@ describe('Your code for makeMap methods', function(){
     });
 
    it('map is empty upon creation & has returns false', function(){
-      expect(map.isEmpty).to.be.equal(true);
-      expect(map.has).to.be.equal('false');
+      expect(map.length).to.be.equal(0);
+      expect(map.has()).to.be.equal(false);
    });
    it('returns an object with methods has, lookup, add, update, remove', function() {
     ['has', 'lookup', 'add', 'update', 'remove'].forEach(function(key) {
@@ -48,7 +48,7 @@ describe('Your code for makeMap methods', function(){
     });
    });
    it('has function returns bool', function() {
-      expect(map.has).to.be.a('bool');
+      expect(map.has()).to.be.a('boolean');
    });
    it('add returns the map & has returns true', function(){
       expect(map.add(k1,v1)).to.equal(map);
