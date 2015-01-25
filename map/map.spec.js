@@ -19,8 +19,16 @@ function randomString(len) {
 // DO NOT CHANGE ANYTHING ABOVE THIS LINE
 
 // Add your tests below
+describe('makeMap structure', function(){
+   it('defines a variable makeMap', function(){
+      expect(function() { makeMap; }).to.not.throw(Error);
+   });
+   it('actually defines a function', function(){
+      expect(makeMap).to.be.a('function');
+   });
+});
 
-describe('Your code for Map Structure', function(){
+describe('Your code for makeMap methods', function(){
    var k1,v1,k2,v2,map;
     beforeEach(function() {
         map = makeMap();
@@ -29,12 +37,7 @@ describe('Your code for Map Structure', function(){
          v1 = Math.random();
          v2 = Math.random();
     });
-   it('defines a variable makeMap', function(){
-      expect(function() { map; }).to.not.throw(Error);
-   });
-   it('actually defines a function', function(){
-      expect(map).to.be.a('function');
-   });
+
    it('map is empty upon creation & has returns false', function(){
       expect(map.isEmpty).to.be.equal(true);
       expect(map.has).to.be.equal('false');
