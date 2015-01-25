@@ -40,7 +40,7 @@ describe('Your makeMap function', function() {
 describe('map methods:', function() {
 var map = makeMap();
 beforeEach(function() {
-        // This ensures every test sees a fresh empty stack
+        // This ensures every test sees a fresh empty map
         map = makeMap();
     });
 
@@ -56,12 +56,17 @@ beforeEach(function() {
 
 //Tests for the lookup function
    it('lookup throws an error if key is not found',function(){
-      expect(map.lookup('hi')).to.throw(Error);
+      expect(function(){map.lookup('hi');}).to.throw(Error);
    });
 
    it('lookup returns value for a key that is found',function(){
       map.add('myKey','value');
       expect(map.lookup('myKey')).to.equal('value');
+   });
+
+   it('Finds a key that has an undefined value',function(){
+      map.add('hi',undefined);
+      expect(map.lookup('hi')).to.equal(undefined);
    });
 
 
@@ -72,7 +77,7 @@ beforeEach(function() {
 
    it('add throws an error if the map already has a key',function(){
       map.add('20',20);
-      expect(map.add('20',10)).to.throw(Error);
+      expect(function(){map.add('20',10);}).to.throw(Error);
    });
 
   it('add successfully adds a key/value pair',function(){
@@ -82,7 +87,7 @@ beforeEach(function() {
 
 //Tests for the update function
   it('update throws error if key is not there',function(){
-      expect(map.update('20',10)).to.throw(Error);
+      expect(function(){map.update('20',10);}).to.throw(Error);
    });
 
    it('update returns the map',function(){
@@ -98,13 +103,13 @@ beforeEach(function() {
 
 //Tests for the remove function
    it('remove throws an error if key is not found',function(){
-      expect(map.remove('hi')).to.throw(Error);
+      expect(function(){map.remove('hi');}).to.throw(Error);
    });
 
    it('remove successfully gets rid of a key',function(){
       map.add('something',2);
       map.remove('something')
-      expect(map.lookup('something')).to.throw(Error);
+      expect(function(){map.lookup('something');}).to.throw(Error);
    });
 
 });
