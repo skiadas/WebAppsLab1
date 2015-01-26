@@ -39,7 +39,7 @@ var makeMap = function() {
       },
       remove : function remove(key){
          if(storedPairs.hasOwnProperty(key)){
-            storedPairs.delete(key);
+            delete storedPairs[key];
          } else {
             throw new Error("Invalid Delete Attempted." + key + " not in Map" );
          }
