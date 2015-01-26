@@ -39,7 +39,7 @@ describe('Your code for makeMap methods', function(){
     });
 
    it('map is empty upon creation & has returns false', function(){
-      expect(map.length).to.be.equal(0);
+      expect(map.isEmpty).to.be.equal(true);
       expect(map.has()).to.be.equal(false);
    });
    it('returns an object with methods has, lookup, add, update, remove', function() {
@@ -80,5 +80,15 @@ describe('Your code for makeMap methods', function(){
       expect(function(){
          map.remove(k1);
       }).to.throw(Error);
+   });
+   it('update throws error if key is missing', function(){
+      expect(function(){
+         map.update(v1);
+      }).to.throw(Error);
+   });
+   it('update changes value of key', function(){
+      map.add(k1,v1);
+      map.update(k1,v2);
+      expect(map.lookup(k1)).to.equal(v2);
    });
 });

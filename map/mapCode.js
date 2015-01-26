@@ -15,16 +15,30 @@ var makeMap = function() {
          return false;
       },
       lookup : function lookup(key){
-
+         if(key in storedPairs){
+            return storedPairs[key];
+         } else {
+            throw new Error("Invalid Key");
+         }
       },
       add : function add(key,value){
-
+         storedPairs[key] = value;
+         return o;
       },
       update : function update(key,value){
-
+         if(key in storedPairs){
+            storedPairs[key] = value;
+         } else {
+            throw new Error("Invalid Key");
+         }
+         return o;
       },
       remove : function remove(key){
-
+         if(key in storedPairs){
+            storedPairs.delete(key);
+         } else {
+            throw new Error("Invalid Delete Attempted. Key not in Map")
+         }
       }
    };
    // Use this object to store the key-value pairs:
@@ -33,6 +47,15 @@ var makeMap = function() {
    // Add initialization code here
 
    // Add local functions here
+   var isEmpty;
+   isEmpty = function(makeMap){
+      for (var key in makeMap){
+         if(makeMap.hasOwnProperty(key)){
+            return false;
+         }
+      }
+      return true;
+   };
 
    // Prepare the object o before returning it
 
