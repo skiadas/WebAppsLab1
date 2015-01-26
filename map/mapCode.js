@@ -9,13 +9,13 @@ var makeMap = function() {
    // This object should contain the methods you want to expose:
    var o = {
       has : function has(key){
-         if (key in storedPairs) {
+         if (storedPairs.hasOwnProperty(key)) {
             return true;
          } 
          return false;
       },
       lookup : function lookup(key){
-         if(key in storedPairs){
+         if(storedPairs.hasOwnProperty(key)){
             return storedPairs[key];
          } else {
             throw new Error("Invalid Key");
@@ -26,7 +26,7 @@ var makeMap = function() {
          return o;
       },
       update : function update(key,value){
-         if(key in storedPairs){
+         if(storedPairs.hasOwnProperty(key)){
             storedPairs[key] = value;
          } else {
             throw new Error("Invalid Key");
@@ -34,7 +34,7 @@ var makeMap = function() {
          return o;
       },
       remove : function remove(key){
-         if(key in storedPairs){
+         if(storedPairs.hasOwnProperty(key)){
             storedPairs.delete(key);
          } else {
             throw new Error("Invalid Delete Attempted. Key not in Map")
