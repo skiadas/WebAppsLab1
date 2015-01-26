@@ -50,8 +50,18 @@ var makeMap = function() {
    var storedPairs = {};
 
    // Add initialization code here
+   var hasOwnProperty = Object.prototype.hasOwnProperty;;
 
    // Add local functions here
+   function isEmpty(storedPairs) {
+    if (storedPairs == null) return true;
+    if (storedPairs.length > 0)    return false;
+    if (storedPairs.length === 0)  return true;
+    for (var key in storedPairs) {
+        if (hasOwnProperty.call(storedPairs, key)) return false;
+    }
+    return true;
+   };
   /* function isEmpty(storedPairs){
       if(Object.keys(storedPairs).length == 0){
          return true;
@@ -62,7 +72,7 @@ var makeMap = function() {
    // Prepare the object o before returning it
 
    return o;
-}
+};
 
 
 // Do NOT change anything below this line.
