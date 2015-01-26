@@ -27,8 +27,7 @@ describe('makeMap structure', function(){
       expect(makeMap).to.be.a('function');
    });
    it('map is empty upon creation & has returns false', function(){
-      //expect(Object.keys(makeMap.storedPairs).length).to.be.equal(0);
-      expect(makeMap.storedPairs.hasOwnProperty(key)).to.be.equal(false);
+      expect(Object.keys(makeMap.storedPairs).length).to.be.equal(0);
       expect(map.has()).to.be.equal(false);
    });
 });
