@@ -40,7 +40,6 @@ describe('Your code for makeMap methods', function(){
     });
      it('map is empty upon creation & has returns false', function(){
       expect(map.has()).to.be.equal(false);
-      expect(map.isEmpty()).to.be.equal(true);
    });
    it('returns an object with methods has, lookup, add, update, remove', function() {
     ['has', 'lookup', 'add', 'update', 'remove'].forEach(function(key) {

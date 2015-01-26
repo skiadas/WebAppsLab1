@@ -53,6 +53,7 @@ var makeMap = function() {
    var hasOwnProperty = Object.prototype.hasOwnProperty;;
 
    // Add local functions here
+   /*
    function isEmpty(storedPairs) {
     if (storedPairs == null) return true;
     if (storedPairs.length > 0)    return false;
@@ -62,7 +63,7 @@ var makeMap = function() {
     }
     return true;
    };
-
+   */
    // Prepare the object o before returning it
 
    return o;
