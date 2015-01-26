@@ -18,7 +18,7 @@ var makeMap = function() {
          if(storedPairs.hasOwnProperty(key)){
             return storedPairs[key];
          } else {
-            throw new Error("Invalid Key");
+            throw new Error("Invalid Lookup: " + key +" not in Map");
          }
       },
       add : function add(key,value){
@@ -29,7 +29,7 @@ var makeMap = function() {
          if(storedPairs.hasOwnProperty(key)){
             storedPairs[key] = value;
          } else {
-            throw new Error("Invalid Key");
+            throw new Error("Invalid Update: "+ key + "not in Map");
          }
          return o;
       },
@@ -37,7 +37,7 @@ var makeMap = function() {
          if(storedPairs.hasOwnProperty(key)){
             storedPairs.delete(key);
          } else {
-            throw new Error("Invalid Delete Attempted. Key not in Map")
+            throw new Error("Invalid Delete Attempted." + key + " not in Map" );
          }
       }
    };
