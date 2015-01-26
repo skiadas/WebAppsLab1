@@ -62,13 +62,7 @@ var makeMap = function() {
     }
     return true;
    };
-  /* function isEmpty(storedPairs){
-      if(Object.keys(storedPairs).length == 0){
-         return true;
-      } else {
-         return false;
-      };
-*/
+
    // Prepare the object o before returning it
 
    return o;
