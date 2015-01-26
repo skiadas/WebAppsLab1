@@ -39,7 +39,7 @@ describe('Your code for makeMap methods', function(){
          v2 = Math.random();
     });
      it('map is empty upon creation & has returns false', function(){
-      //expect(Object.keys(makeMap).length).to.be.equal(0);
+      //expect(Object.keys(map.storedPairs).length).to.be.equal(0);
       expect(map.has()).to.be.equal(false);
    });
    it('returns an object with methods has, lookup, add, update, remove', function() {
