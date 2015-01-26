@@ -22,8 +22,12 @@ var makeMap = function() {
          }
       },
       add : function add(key,value){
+         if(o.has(key)){
+            throw new Error("Map already contains" + key)
+         } else {
          storedPairs[key] = value;
          return o;
+      }
       },
       update : function update(key,value){
          if(storedPairs.hasOwnProperty(key)){
@@ -41,6 +45,7 @@ var makeMap = function() {
          }
       }
    };
+
    // Use this object to store the key-value pairs:
    var storedPairs = {};
 

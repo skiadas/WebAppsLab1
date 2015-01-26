@@ -54,6 +54,12 @@ describe('Your code for makeMap methods', function(){
       expect(map.add(k1,v1)).to.equal(map);
       expect(map.has(k1)).to.be.equal(true);
    });
+   it('add returns error when key already exists in the map', function(){
+      map.add(k1,v1);
+      expect(function(){
+         map.add(k1,v1);
+      }).to.throw(Error);
+   });
    it('lookup returns value, ', function(){
       map.add(k1,v1);
       expect(map.lookup(k1)).to.be.equal(v1);
