@@ -52,16 +52,13 @@ var makeMap = function() {
    // Add initialization code here
 
    // Add local functions here
-   var isEmpty;
-   isEmpty = function(makeMap){
-      for (var key in makeMap){
-         if(makeMap.hasOwnProperty(key)){
-            return false;
-         }
-      }
-      return true;
-   };
-
+  /* function isEmpty(storedPairs){
+      if(Object.keys(storedPairs).length == 0){
+         return true;
+      } else {
+         return false;
+      };
+*/
    // Prepare the object o before returning it
 
    return o;

@@ -26,6 +26,11 @@ describe('makeMap structure', function(){
    it('actually defines a function', function(){
       expect(makeMap).to.be.a('function');
    });
+   it('map is empty upon creation & has returns false', function(){
+      //expect(Object.keys(makeMap.storedPairs).length).to.be.equal(0);
+      expect(makeMap.storedPairs.hasOwnProperty(key)).to.be.equal(false);
+      expect(map.has()).to.be.equal(false);
+   });
 });
 
 describe('Your code for makeMap methods', function(){
@@ -37,11 +42,6 @@ describe('Your code for makeMap methods', function(){
          v1 = Math.random();
          v2 = Math.random();
     });
-
-   it('map is empty upon creation & has returns false', function(){
-      expect(map.isEmpty).to.be.equal(true);
-      expect(map.has()).to.be.equal(false);
-   });
    it('returns an object with methods has, lookup, add, update, remove', function() {
     ['has', 'lookup', 'add', 'update', 'remove'].forEach(function(key) {
         expect(map[key]).to.be.a('function');
