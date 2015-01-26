@@ -1,6 +1,6 @@
 /*
- * Name 1: YourNameHere
- * Name 2: YourNameHere
+ * Name 1: Edwin Nartey
+ * Name 2: Dakota McCoy
  */
 
 // Do not change the name of this function
